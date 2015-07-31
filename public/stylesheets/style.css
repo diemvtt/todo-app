@@ -1,0 +1,134 @@
+body{
+    font: 300 14px/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#todoapp {
+    background: #FFF none repeat scroll 0% 0%;
+    margin: auto;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2), 0px 25px 50px 0px rgba(0,0,0,0.1);
+    width: 600px;
+    padding:30px 20px 20px 10px;
+    position:relative;
+}
+#todoapp h1{
+    font-size: 100px;
+    text-align: center;
+    font-weight: 100;
+    color: rgba(175,47,47,0.15);
+    text-rendering: optimizelegibility;
+
+
+}
+.todo-input{
+    padding: 16px 16px 16px 60px;
+    border: medium none;
+    background: rgba(0,0,0,0.004) none repeat scroll 0% 0%;
+    box-shadow: 0px -2px 0px rgba(0,0,0,0.03) inset;
+    font-size: 26px;
+    width: 530px;
+
+}
+.main {
+    z-index: 2;
+    border-top: 1px solid #E6E6E6;
+}
+button, input[type = "checkbox"]{
+    outline: medium none;
+}
+.toggle-all{
+    position: absolute;
+    width: 60px;
+    text-align: center;
+    border: medium none;
+    top:210px;
+}
+.todoList{
+    margin: 0;
+    padding: 0;
+    list-style: outside none none;
+}
+.todo-item{
+    font-size: 24px;
+    border-bottom: 1px solid #E6E6E6;
+
+}
+
+.edit-item {
+    background: rgba(0,0,0,0.004) none repeat scroll 0% 0%;
+    font-size: 24px;
+    width: 500px;
+    margin: 0px 0px 0px 44px;
+    padding: 13px 17px 12px;
+    box-shadow: 0px -2px 0px rgba(0,0,0,0.03) inset;
+
+
+}
+.view {
+    padding:22px;
+}
+.completed{
+    text-decoration: line-through;
+    color: #E3E3E3;
+    margin-left: 10px;
+
+}
+.active{
+    margin-left: 10px;
+}
+.delete{
+    position: absolute;
+    right:30px;
+}
+.view a{
+    text-decoration: none;
+    color:#CC9A9A;
+}
+.view a:hover {
+    color:#880000;
+}
+.footer{
+    color: #777;
+    padding: 10px 15px;
+    height: 20px;
+    text-align: center;
+    border-top:1px solid #e6e6e6;
+}
+.todo-count {
+    float:left;
+    text-align: left;
+}
+.filter{
+    margin: 0px;
+    padding: 0px;
+    list-style: outside none none;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+}
+.filter li {
+    display: inline;
+}
+.filter li a{
+    text-decoration: none;
+    color:#777;
+    padding:10px;
+}
+
+.clear-completed{
+    float:right;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    line-height: 20px;
+    text-decoration: none;
+}
+button {
+    margin: 0px;
+    padding: 0px;
+    border: 0px none;
+    background: transparent none repeat scroll 0% 0%;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+}

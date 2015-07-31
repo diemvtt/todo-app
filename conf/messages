@@ -1,0 +1,7 @@
+application.name = Todos
+todo.messages = What needs to be done?
+items.left = item(s) left
+todo.all = all
+todo.active = active
+todo.completed = completed
+todo.error = error
