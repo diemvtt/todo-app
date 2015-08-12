@@ -8,7 +8,7 @@ class TodoItem extends React.Component {
 
         this.state = {
             edited: false
-        }
+        };
     }
 
     handleSubmit(e) {
@@ -39,34 +39,36 @@ class TodoItem extends React.Component {
         TodoActions.update(todo);
     }
 
-
     render() {
         //const {value,onEdit,...props} = this.props;
         var edited = this.state.edited;
+
+        let display = edited ?
+            (<form onSubmit={this.handleSubmit.bind(this)}>
+                <input className="edit-item" type='text' defaultValue={this.props.todo.description}
+                       ref="todoitem"
+                    />
+            </form>)
+            :
+            (<div className="view">
+                <input type='checkbox' className="toggle" checked={this.props.todo.status}
+                       onChange={this.onChange.bind(this)} ref="todocheck"/>
+                { this.props.todo.status ?
+                    <span className="completed"
+                          onClick={() => this.edit()}>{this.props.todo.description}</span>
+                    :
+                    <span className="active"
+                          onClick={() => this.edit()}>{this.props.todo.description}</span>
+                }
+
+                <a href="#" onClick={TodoActions.delete.bind(null, this.props.todo.id)}
+                   className="delete">x</a>
+            </div>);
+
         return (
             <li className="todo-item">
                 {
-                    edited ?
-                        <form onSubmit={this.handleSubmit.bind(this)}>
-                            <input className="edit-item" type='text' defaultValue={this.props.todo.description}
-                                   ref="todoitem"
-                                />
-                        </form>
-                        :
-                        <div className="view">
-                            <input type='checkbox' className="toggle" checked={this.props.todo.status}
-                                   onChange={this.onChange.bind(this)} ref="todocheck"/>
-                            { this.props.todo.status ?
-                                <span className="completed"
-                                      onClick={() => this.edit()}>{this.props.todo.description}</span>
-                                :
-                                <span className="active"
-                                      onClick={() => this.edit()}>{this.props.todo.description}</span>
-                            }
-
-                            <a href="#" onClick={TodoActions.delete.bind(null, this.props.todo.id)}
-                               className="delete">x</a>
-                        </div>
+                    display
                 }
             </li>
         );
