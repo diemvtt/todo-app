@@ -1,18 +1,23 @@
 var path = require('path');
 var ROOT_PATH = path.resolve(__dirname);
+var webpack = require('webpack');
 
 
 module.exports = {
-    entry: [
-        path.resolve(ROOT_PATH, 'modules/todoapp/components/index.jsx'),
-    ],
+    entry: {
+        index: path.resolve(ROOT_PATH, 'modules/todoapp/components/index.jsx'),
+        serverSide: path.resolve(ROOT_PATH, 'modules/todoapp/components/serverSide.jsx')
+    },
     output: {
         path: path.resolve(ROOT_PATH, '../public/javascripts'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     resolve: {
         extensions: ['', '.js', '.jsx'],
     },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
+    ],
     module: {
         loaders: [
             {
@@ -24,6 +29,6 @@ module.exports = {
                 loader: 'babel?stage=1',
                 include: path.resolve(ROOT_PATH, '.')
             }
-        ],
-    },
+        ]
+    }
 };

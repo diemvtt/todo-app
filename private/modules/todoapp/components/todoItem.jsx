@@ -7,7 +7,7 @@ class TodoItem extends React.Component {
         super(props);
 
         this.state = {
-            edited: false,
+            edited: false
         }
     }
 
@@ -27,8 +27,6 @@ class TodoItem extends React.Component {
         this.setState({
             edited: false,
         });
-
-
     }
 
     onChange() {
@@ -47,39 +45,37 @@ class TodoItem extends React.Component {
         var edited = this.state.edited;
         return (
             <li className="todo-item">
-
-
                 {
                     edited ?
                         <form onSubmit={this.handleSubmit.bind(this)}>
                             <input className="edit-item" type='text' defaultValue={this.props.todo.description}
                                    ref="todoitem"
-                                /></form>
+                                />
+                        </form>
                         :
                         <div className="view">
-                            <input type='checkbox' class="toggle" checked={this.props.todo.status}
+                            <input type='checkbox' className="toggle" checked={this.props.todo.status}
                                    onChange={this.onChange.bind(this)} ref="todocheck"/>
                             { this.props.todo.status ?
                                 <span className="completed"
-                                      onClick={() => this.edit()}> {this.props.todo.description}</span>
+                                      onClick={() => this.edit()}>{this.props.todo.description}</span>
                                 :
                                 <span className="active"
-                                      onClick={() => this.edit()}> {this.props.todo.description}</span>}
+                                      onClick={() => this.edit()}>{this.props.todo.description}</span>
+                            }
 
-                            <a href="#" onClick={TodoActions.delete.bind(null, this.props.todo.id)} className="delete">x</a>
+                            <a href="#" onClick={TodoActions.delete.bind(null, this.props.todo.id)}
+                               className="delete">x</a>
                         </div>
-                }</li>
-
-
+                }
+            </li>
         );
     }
 
     edit() {
         this.setState({
-            edited: true,
+            edited: true
         });
     }
-
-
 }
 export default TodoItem;

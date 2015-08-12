@@ -2,7 +2,7 @@
   "name": "todo-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --watch"
@@ -13,6 +13,7 @@
     "babel-core": "^5.8.9",
     "babel-loader": "^5.3.2",
     "css-loader": "^0.15.6",
+    "iso": "^4.1.0",
     "node-libs-browser": "^0.5.2",
     "style-loader": "^0.12.3",
     "underscore": "^1.8.3",

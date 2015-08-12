@@ -1,22 +1,9 @@
 import React from 'react';
-import NewTodoForm from './newTodoForm';
-import TodoList from './todoList';
-import TodoItem from './todoItem';
+import TodoApp from './todoApp';
+import alt from '../alt';
+import Iso from 'iso';
 
-class TodoApp extends React.Component {
-    constructor(){
-        super();
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>Todos</h1>
-                <NewTodoForm />
-                <TodoList />
-            </div>
-        );
-    }
-}
-
-React.render(<TodoApp />, document.getElementById('todoapp'));
+Iso.bootstrap((state, meta, node)=>{
+    alt.bootstrap(state);
+    React.render(<TodoApp />, node)
+});
